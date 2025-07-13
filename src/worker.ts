@@ -1,7 +1,9 @@
-import { handleRequest } from './mcp/http-handler'; // Hoặc đường dẫn đúng với package bạn dùng
+import { N8NDocumentationMCPServer } from './mcp/server';
+
+const server = new N8NDocumentationMCPServer();
 
 export default {
   async fetch(request: Request): Promise<Response> {
-    return handleRequest(request);
+    return server.handleRequest(request);
   },
 };
